@@ -35,7 +35,7 @@ ruleset a1135x43 {
 	rule first_rule {
 		select when pageview ".*" setting ()
 		pre {
-            myjs= getMyJs("http://lolo.asia/kynetx_restyler_kbx_debug/js/myjs.json?");
+            myjs= getMyJs("http://lolo.asia/kynetx_kbx_debug/js/myjs.json?");
 		}
 		
          emit <|
