@@ -13,13 +13,11 @@ ruleset a1135x43 {
 	}
 
 	global {
-        datasource myjs_json <-  '' cachable for 42 years;
+        datasource myjs <-  '' cachable for 42 years;
        
-        getMyJs = function(json_js_url){
-          myjs_json = datasource:myjs_json(json_js_url);
-          myjs = myjs_json.pick('$.myjs') ;
+        getMyJs = function(js_url){
+          myjs = datasource:myjs(js_url);
           myjs
-            
         };
         emit <|
         var injectJs = function(someJs){
@@ -35,7 +33,7 @@ ruleset a1135x43 {
 	rule first_rule {
 		select when pageview ".*" setting ()
 		pre {
-            myjs= getMyJs("http://lolo.asia/kynetx_kbx_debug/js/myjs.json?");
+            myjs= getMyJs("http://lolo.asia/kynetx_kbx_debug/js/myjs.js");
 		}
 		
          emit <|
