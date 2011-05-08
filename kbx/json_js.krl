@@ -40,8 +40,8 @@ ruleset a1135x43 {
 		
          emit <|
              console.log(myjs);
-             injectJs(myjs);
-             eval(myjs);
+             injectJs(myjs);// => $K won't be available inside the included js code when running inside KBX 
+             eval(myjs);// => $K will be available inside the included js code when running inside KBX 
             |>;
        
 	}
